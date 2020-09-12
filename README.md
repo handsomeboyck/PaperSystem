@@ -34,5 +34,5 @@
 
 ![](https://github-1257740221.cos.ap-nanjing.myqcloud.com/paper_web/1599878514394.png)
 
-[项目地址]: http://ickck.cn/#/
+项目地址：49.235.42.82
 
