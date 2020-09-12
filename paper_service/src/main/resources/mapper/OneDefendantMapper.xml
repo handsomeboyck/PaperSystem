@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccnu.paper_service.mapper.OneDefendantMapper">
+    <insert id="saveOneDefendant" parameterType="DefendantOne" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO `defendant_one`
+        ( `name`, `sex`, `nature`, `address`, `card_num`, `lawyer_id`)
+        VALUES
+        (
+        #{name,jdbcType=VARCHAR},#{sex,jdbcType=VARCHAR},#{nature,jdbcType=VARCHAR},
+        #{address,jdbcType=VARCHAR},#{cardNum,jdbcType=VARCHAR},#{lawyerId,jdbcType=INTEGER}
+        );
+    </insert>
+    <select id="listDefendantByLawyerId" resultType="DefendantOne">
+        select * from  defendant_one where lawyer_id = #{lawyer_id}  order by id desc
+    </select>
+
+
+
+
+</mapper>

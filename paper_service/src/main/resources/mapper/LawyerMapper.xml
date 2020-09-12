@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccnu.paper_service.mapper.LawyerMapper">
+    <select id="listLawyer" resultType="Lawyer">
+        select * from lawyer
+    </select>
+
+    <select id="findByPhoneAndPwd" resultType="Lawyer">
+        select * from lawyer where phone = #{phone} and pwd = #{pwd}
+    </select>
+
+    <insert id="saveLawyer" parameterType="Lawyer" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO `lawyer`
+        ( `name`, `pwd`, `phone`)
+        VALUES
+        (#{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR});
+    </insert>
+
+
+</mapper>

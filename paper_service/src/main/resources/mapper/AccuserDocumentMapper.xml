@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccnu.paper_service.mapper.AccuserDocumentMapper">
+    <select id="findByAccuserId" resultType="AccuserDocument">
+         select * from accuser_document where  accuser_id  = #{accuser_id,jdbcType=INTEGER}
+
+    </select>
+
+
+</mapper>
